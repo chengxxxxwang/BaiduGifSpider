@@ -65,33 +65,38 @@ class Gifcrawl(CrawlSpider):
         print "begin parse input file."
         # base = '/Users/Apple/Desktop/'
 
-        f = open('/spiders/keywords_bak.txt ', 'r')
+        f = open('/Users/chenxingwang/Desktop/baidu/baidu/spiders/keywords.txt', 'r')
 
-        line = f.readline()
-
-        tag        = ""
-        category   = ""
-        dict       = {}
-        keywords   = []
-        categories = []
-        tags       = []
-        url_keys   = []
-        myURLs     = []
-        dicts      = []
-        pages      = []
+        line         = f.readline()
+        tag          = ""
+        category     = ""
+        dict         = {}
+        keywords     = []
+        categories   = []
+        tags         = []
+        url_keys     = []
+        myURLs       = []
+        dicts        = []
+        pages        = []
+        check_pages  = 0
 
         while line:
             print line,                 # 后面跟 ',' 将忽略换行符
             print line.split('|')
             tmpData = line.split('|')
-            check_pages = len(tmpData)
+            if tmpData:
+                check_pages = 2
+            else:
+                check_pages = len(tmpData)
+
             if check_pages <= 3:
                 page = 2 #defaut page is 2
-            elif check_pages = 4:
+            elif check_pages == 4:
                 page = int(tmpData[3])
             else:
                 pass
                 print 'len of list > 4'
+
             keyword = line.split('|')[0]
             category = line.split('|')[1]
             tag = line.split('|')[2]

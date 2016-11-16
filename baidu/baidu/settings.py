@@ -24,9 +24,9 @@ ROBOTSTXT_OBEY = False
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
-ITEM_PIPELINES = {
-    'baidu.pipelines.MySqlStorePipeline': 300
-}
+# ITEM_PIPELINES = {
+#     'baidu.pipelines.MySqlStorePipeline': 300
+# }
 
 
 # start MySQL database configure setting
